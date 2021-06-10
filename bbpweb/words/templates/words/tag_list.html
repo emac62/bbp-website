@@ -1,0 +1,37 @@
+{% load static %}
+
+<div class="tag-list-container">
+  <div class="tag-clicked">
+    <h1 class="sub-title">Showing all posts with "{{ tag_selected }}" as a tag.</h1>
+  </div>
+
+  <div class="posts-by-tag">
+
+    {% for post in tag_selected_posts %}
+    {% if post.is_published != False %}
+    <div class="tagged-post">
+      <div class="post-image"><img src="{{ post.post_image.url }}" alt=""></img></div>
+      <div class="post-title-date">
+        <div class="post-title">
+          <h1>{{ post.title }}</h1>
+        </div>
+        <div class="date-published">{{ post.published_date|date:"F d, Y" }} </div>
+        <div class="post-content">{{ post.content|truncatewords:50|safe }}</div>
+      </div>
+    </div>
+    {% else %}
+    <div class="tagged-post">
+      <div class="post-image"><img src="{% static 'words/images/bobbiebLogo.png' %}" alt=""></img></div>
+      <div class="post-title-date">
+        <div class="post-title">
+          <h1>This Post has not been published yet. Check back soon.</h1>
+        </div>
+        <div class="date-published">{{ post.created_on|date:"F d, Y" }} </div>
+        
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+</div>

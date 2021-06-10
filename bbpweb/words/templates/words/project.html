@@ -1,0 +1,34 @@
+{% extends 'words/index.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<div class="words-image w-100">
+  <img src="{% static 'words/images/PhotosHeader.png' %}" alt="Words">
+</div>
+
+<h2>{{ project.title }}</h2>
+
+  <section class="one-half-port">
+    <img src="{{ project.image1.url}}" alt="{{ project.alt1 }}">
+    <p class="photo-label">{{ project.alt1 }}</p>
+  </section>
+ 
+ <section class="one-half-port">
+    <img src="{{ project.image2.url}}" alt="{{ project.alt2 }}">
+    <p class="photo-label">{{ project.alt2 }}</p>
+  </section>
+<div class="clearfix"></div>
+  <section class="one-half-port">
+    <img src="{{ project.image3.url}}" alt="{{ project.alt3 }}">
+    <p class="photo-label">{{ project.alt3 }}</p>
+  </section>
+
+  <section class="one-half-port">
+    <img src="{{ project.image4.url}}" alt="{{ project.alt4 }}">
+    <p class="photo-label">{{ project.alt4 }}</p>
+  </section>
+<div class="clearfix"></div>
+
+{% endblock content %}

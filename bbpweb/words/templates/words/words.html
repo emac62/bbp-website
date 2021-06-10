@@ -1,0 +1,85 @@
+{% extends 'words/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="words-image w-100">
+  <img src="{% static 'words/images/WordsHeader.png' %}" alt="Words">
+</div>
+
+
+<div class="posts-container">
+
+{% if view.title != "Tag Search" %}
+  <div class="current-post">
+  {% if messages %}
+{% for message in messages %}
+<div class="alert {% if message.tags %} {{ message.tags }} {% endif %}">
+  {{ message }} <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+</div>
+{% endfor %}
+{% endif %}
+    <div class="post-title">
+      <h2 class="title">{{ latest.title }}</h2>
+
+    </div>
+    <div class="post-date">
+      <small class="date">{{ latest.published_date|date:"F d, Y"}}</small>
+    </div>
+    <div class="post-content mt-5">
+      <img src="{{ latest.post_image.url }}" alt="">
+      <p class="content">{{ latest.content|safe }}</p>
+    </div>
+  </div>
+{% elif view.title != "Words" %}
+
+{% include 'words/tag_list.html' %}
+
+{% endif %}
+  <div class="side-bar">
+    <div class="side-info">
+      <h2>Previous Posts</h2>
+    </div>
+    <div class="recent"></div>
+    <h4 class="sub-title">by Date</h4>
+    <ul>
+      {% for post in posts %}
+      {% if post.is_published %}
+      <li><a href="{% url 'details' post.pk %}">{{ post.published_date|date:"F d, Y"}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="tags">
+      <h4 class="sub-title">
+        by Tags
+      </h4>
+      <ul>
+        {% for tag in tags %}<li><a href="{% url 'tagged' tag.slug %}">{{ tag.name }}</a></li>{% endfor %}
+
+      </ul>
+    </div>
+    <div class="search-container">
+      <h4 class="sub-title">
+        or Search
+      </h4>
+      <p>
+        <input placeholder="Search for..">
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="subcribe">
+  <form class="form" action="{% url 'subscribe' %}" method='Post'>{% csrf_token %}
+    <h2>Subscribe to get an email for the next post.</h2>
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+    
+  </form>
+</div>
+
+
+{% endblock content %}

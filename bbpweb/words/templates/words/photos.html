@@ -1,0 +1,68 @@
+{% extends 'words/index.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="words-image w-100">
+  <img src="{% static 'words/images/PhotosHeader.png' %}" alt="Photos Header">
+</div>
+
+
+  <h2>Projects</h2>
+  {% for img in projects %}
+  <section class="one-third-port">
+  <p class="project-title"><a href="{% url 'project-detail' img.pk %}">{{img.title }}</a></p>
+    <img src="{{ img.image2.url}}" alt="{{ img.alt2 }}">
+    <p class="photo-label">{{ img.alt2 }}</p>
+  </section>
+  {% endfor %}
+
+  <div class="clearfix"></div>
+  <div class="client">
+    <section class="left-col">
+      <h2>Client Work</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem provident perspiciatis voluptas quos maxime
+        fugiat magnam laborum consequuntur numquam repellendus dolorem labore recusandae quo corrupti, repellat
+        doloremque sapiente? Eligendi, aliquid.</p>
+    </section>
+    <section class="sidebar">
+      <section class="contact">
+        <p>Portrait <br class="break">
+          Commissions <br class="break">
+          Wedding <br class="break">
+          Engagement <br class="break">
+          Commercial <br class="break">
+          Studio</p>
+      </section>
+    </section>
+  </div>
+  <div class="clearfix"></div>
+  <section class="parallax" style="background: url('{{ parallax_img.parallax_image.url }}') fixed top">
+    <div class="parallax-inner">
+    </div>
+  </section>
+  <div class="clearfix"></div>
+  
+    <h2>Purchase Photos</h2>
+    <section class="contact">
+      <p>Selected photos are available for purchase. <br class="break"><a class="catalogue" href="#">See Current
+          Catalogue</a>
+        <br class="break">
+        <br class="break">
+      </p>
+
+    </section>
+
+<div class="contact">
+  <form class="form" action="{% url 'contact' %}" method='Post'>{% csrf_token %}
+    <h2>Connect with Bobbie</h2>
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+    
+  </form>
+  <div class="email-box">
+      <a href="mailto:bobbiebphotography@gmail.com?Subject=Hi%20there!" target="_top"><span class="far fa-envelope"></span> bobbiebphotography@gmail.com</a>
+  </div>
+</div>
+
+{% endblock content %}

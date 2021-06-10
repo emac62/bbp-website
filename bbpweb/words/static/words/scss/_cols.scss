@@ -1,0 +1,73 @@
+.client {
+  display: flex;
+  align-items: center;
+}
+
+.left-col {
+  width: 60%;
+  float: left;
+  margin: 4% 0 4% 4%;
+}
+
+.sidebar {
+  width: 26%;
+  float: left;
+  margin: 4%;
+}
+
+
+.one-third-port {
+  width: 30.33333333%;
+  padding: 1%;
+  margin: 1%;
+  float: left;
+
+  .project-title {
+    text-align: center;
+    color: $text-color;
+    padding: 1%;
+    
+  }
+
+  .photo-label {
+    text-align: center;
+  }
+
+}
+
+.one-half-port {
+  width: 46%;
+  padding: 1%;
+  margin: 1%;
+  float: left;
+
+  
+
+  .photo-label {
+    text-align: center;
+  }
+
+}
+
+
+.contact p {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.contact a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+a.catalogue:hover {
+  color: $greeny-accent;
+}
+
+
+.clearfix {
+  clear: both;
+  height: 3%;
+}
+
+
