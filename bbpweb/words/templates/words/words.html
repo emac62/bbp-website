@@ -9,15 +9,15 @@
 
 <div class="posts-container">
 
-{% if view.title != "Tag Search" %}
+  {% if view.title != "Search" %}
   <div class="current-post">
-  {% if messages %}
-{% for message in messages %}
-<div class="alert {% if message.tags %} {{ message.tags }} {% endif %}">
-  {{ message }} <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-</div>
-{% endfor %}
-{% endif %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {% if message.tags %} {{ message.tags }} {% endif %}">
+      {{ message }} <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    {% endfor %}
+    {% endif %}
     <div class="post-title">
       <h2 class="title">{{ latest.title }}</h2>
 
@@ -30,11 +30,11 @@
       <p class="content">{{ latest.content|safe }}</p>
     </div>
   </div>
-{% elif view.title != "Words" %}
+  {% elif view.title != "Words" %}
 
-{% include 'words/tag_list.html' %}
+  {% include 'words/tag_list.html' %}
 
-{% endif %}
+  {% endif %}
   <div class="side-bar">
     <div class="side-info">
       <h2>Previous Posts</h2>
@@ -57,27 +57,28 @@
 
       </ul>
     </div>
+    <h4 class="sub-title">
+      or by Keyword
+    </h4>
     <div class="search-container">
-      <h4 class="sub-title">
-        or Search
-      </h4>
-      <p>
-        <input placeholder="Search for..">
-      </p>
+
+
+      <form action="{% url 'search' %}" method="GET">
+        <input name="q" type="text" placeholder="Search...">
+        <button type="submit" value='{{ request.GET.q }}'><i class="fa fa-search"></i></button>
+      </form>
+
+
     </div>
   </div>
 </div>
-
-
-
-
 
 <div class="subcribe">
   <form class="form" action="{% url 'subscribe' %}" method='Post'>{% csrf_token %}
     <h2>Subscribe to get an email for the next post.</h2>
     {{form.as_p}}
     <button type="submit">Submit</button>
-    
+
   </form>
 </div>
 

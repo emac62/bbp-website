@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import MainPageImages, PhotosPageImages, Post, ParallaxImages, Project
 from taggit.models import Tag
 from django.template import context
@@ -50,7 +50,6 @@ class WordsView(TagMixin, ListView):
         context["latest"] = Post.objects.filter(is_published=True).first()
         context["title"] = "Words"
         context["form"] = SubscribeForm()
-        print(context)
         return context
 
 
@@ -86,7 +85,7 @@ class ProjectDetailView(DetailView):
 class WordsDetailView(DetailView):
     model = Post
     template_name = "words/words.html"
-    title = "Words - Post"
+    title = "Words"
 
     def get_context_data(self, **kwargs):
         context = super(WordsDetailView, self).get_context_data(**kwargs)
@@ -104,18 +103,40 @@ class WordsDetailView(DetailView):
 class TagListView(TagMixin, ListView):
     model = Post
     template_name = "words/words.html"
-    title = "Tag Search"
+    title = "Search"
 
     def get_context_data(self, **kwargs):
         context = super(TagListView, self).get_context_data(**kwargs)
-        context["tag_selected_posts"] = Post.objects.filter(
-            tags__slug=self.kwargs.get("slug")
+        context["results"] = Post.objects.filter(tags__slug=self.kwargs.get("slug"))
+        context["posts"] = Post.objects.all()
+        context["form"] = SubscribeForm()
+        context["title"] = "Search"
+        return context
+
+
+class SearchListView(TagMixin, ListView):
+    model = Post
+    template_name = "words/words.html"
+    title = "Search"
+
+    def get(self, request, *args, **kwargs):
+        query = request.GET.get("q", "")
+        self.results = Post.objects.filter(content__icontains=query)
+        return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchListView, self).get_context_data(
+            results=self.results, **kwargs
         )
         context["posts"] = Post.objects.all()
         context["form"] = SubscribeForm()
-        context["tag_selected"] = self.kwargs.get("slug")
-        context["title"] = "Tag Search"
+        context["title"] = "Search"
         return context
+
+
+class PrivacyPolicy(TemplateView):
+    template_name = "words/privacy.html"
+    title = "Privacy Policy"
 
 
 def contact(request):

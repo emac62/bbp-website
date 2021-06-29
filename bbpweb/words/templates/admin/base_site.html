@@ -1,0 +1,48 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}BobbieB Photography and Words | Admin Site{% endblock %}
+{% block extrastyle %} 
+{{ block.super }}
+<style>
+:root {
+    --primary: #8B877E;
+    --secondary: #8B877E;
+    --link-fg: #555555;
+    --link-selected-fg: #A5A090;
+    --accent: #555555;
+    --header-color: #555555;
+    --header-bg: #EEEFEF;
+    --header-link-color: #555555;
+    --breadcrumbs-fg: #EEEFEF;
+
+
+}       
+.module h2, .module caption, .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: var(--header-bg);
+    color: var(--header-link-color);
+}
+
+
+</style>
+
+{% endblock %}
+
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'words/images/bobbiebLogo.png' %}" height="40px" />
+          BobbieB Photography and Words
+    </a>
+</h1>
+{{block.super}}
+{% endblock %}
+
+
+{% block nav-global %}{% endblock %}

@@ -8,6 +8,8 @@ from .views import (
     WordsDetailView,
     TagListView,
     ProjectDetailView,
+    SearchListView,
+    PrivacyPolicy,
 )
 
 urlpatterns = [
@@ -16,7 +18,9 @@ urlpatterns = [
     path("photos/", PhotosView.as_view(), name="photos"),
     path("words/<int:pk>/", WordsDetailView.as_view(), name="details"),
     path("words/tag/<str:slug>", TagListView.as_view(), name="tagged"),
+    path("words/search_results", SearchListView.as_view(), name="search"),
     path("words/contact", views.contact, name="contact"),
     path("words/subscribe", views.subscribe, name="subscribe"),
     path("words/project/<int:pk>", ProjectDetailView.as_view(), name="project-detail"),
+    path("privacy/", PrivacyPolicy.as_view(), name="privacy"),
 ]

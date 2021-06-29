@@ -182,7 +182,7 @@ body, html {
 
 .posts-container .post-content img {
   float: right;
-  width: 35%;
+  width: 40%;
   height: auto;
   margin-left: 1rem;
 }
@@ -203,12 +203,24 @@ body, html {
   text-align: center;
 }
 
-.search-container input[type=text] {
-  width: 80%;
-  padding: 6px;
-  margin-top: 8px;
+.search-container form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.search-container form input {
+  flex: 5;
+  float: left;
   font-size: 1rem;
   border: none;
+  padding: 0.5rem;
+}
+
+.search-container form button {
+  flex: 1;
+  float: right;
 }
 
 .words-image {
@@ -284,7 +296,7 @@ input:focus {
   border-bottom: 2px solid #78788c;
 }
 
-p:before {
+.contact p:before {
   content: attr(type);
   display: block;
   margin: 28px 0 0;
@@ -381,7 +393,7 @@ h2 {
 p {
   color: #555555;
   font-size: 140%;
-  line-height: 180%;
+  line-height: 150%;
   text-align: left;
   font-weight: 300;
 }

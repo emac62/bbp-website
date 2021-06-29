@@ -2,12 +2,12 @@
 
 <div class="tag-list-container">
   <div class="tag-clicked">
-    <h1 class="sub-title">Showing all posts with "{{ tag_selected }}" as a tag.</h1>
+    <h2>Search Results</h2>
   </div>
 
   <div class="posts-by-tag">
 
-    {% for post in tag_selected_posts %}
+    {% for post in results %}
     {% if post.is_published != False %}
     <div class="tagged-post">
       <div class="post-image"><img src="{{ post.post_image.url }}" alt=""></img></div>
@@ -15,8 +15,9 @@
         <div class="post-title">
           <h1>{{ post.title }}</h1>
         </div>
-        <div class="date-published">{{ post.published_date|date:"F d, Y" }} </div>
+        <div class="date-published"><small class="date">{{ post.published_date|date:"F d, Y"}}</small> </div>
         <div class="post-content">{{ post.content|truncatewords:50|safe }}</div>
+        <a href="{% url 'details' post.pk %}">Read the full article....</a>
       </div>
     </div>
     {% else %}

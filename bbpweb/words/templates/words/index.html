@@ -10,7 +10,7 @@
   <title>bobbieb</title>
   <script src="https://kit.fontawesome.com/8f3e23e397.js" crossorigin="anonymous"></script>
   <link href="{% static 'words/css/words.css' %}" rel="stylesheet">
-  <link rel="icon" href="{% static 'words/images/bobbiebLogo.png' %}" type="image/icon type">
+  <link rel="icon" href="{% static 'words/images/bbpFavicon.png' %}" type="image/icon type">
 </head>
 
 {% block extra-head %}{% endblock extra-head %}
@@ -22,7 +22,7 @@
     <a href="{% url 'home' %}">Home</a> | 
     <a href="{% url 'photos' %}">Photos</a> |
     <a href="{% url 'words' %}">Words</a> |
-    <a href="#">Privacy</a></p>
+    <a href="{% url 'privacy' %}">Privacy</a></p>
     <p>&copy2021 bobbiebphotography</p>
   </footer>
 </body>

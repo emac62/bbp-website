@@ -23,3 +23,6 @@ admin.site.register(PhotosPageImages)
 admin.site.register(ParallaxImages)
 admin.site.register(Subscriber)
 admin.site.register(Project, ProjectAdmin)
+
+
+admin.site.index_title = "bbp Settings"

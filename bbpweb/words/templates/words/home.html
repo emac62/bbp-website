@@ -29,17 +29,17 @@
   </a>
   {% for project in projects %}
   <section class="one-third-port">
- 
+
     <img src="{{ project.image1.url}}" alt="">
     <a href="{% url 'project-detail' project.pk %}">
       <p class="photo-label">{{ project.title }}</p>
     </a>
-    
+
   </section>
   {% endfor %}
   <div class="clearfix"></div>
 
-  <a name="words">
+  <section id="words">
     <a href="{% url 'words' %}">
       <h2>Words</h2>
     </a>
@@ -65,49 +65,53 @@
         <div class="post-content mt-5">
 
           <p class="content">{{ latest.content|truncatewords:50|safe }}</p>
+          <a href="{% url 'details' latest.pk %}">Read the full article....</a>
         </div>
       </div>
 
 
     </div>
+  </section>
+  <div class="clearfix"></div>
+
+
+
+  <section id="contact">
+    <section class="parallax" style="background: url('{{ parallax_img.parallax_image.url }}') fixed top">
+      <div class="parallax-inner">
+      </div>
+    </section>
     <div class="clearfix"></div>
+    <h2>Connect</h2>
+    <section class="contact">
+      <p>bobbieb <br class="break"><a class="catalogue"
+          href="mailto:bobbiebphotography@gmail.com">bobbiebphotography@gmail.com</a>
+        <br class="break"> Guelph, Ontario
+      </p>
+    </section>
+    <section>
+      <ul class="social">
+        <li><a href="#" target="=_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" target="=_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </section>
+  </section>
+  <div class="clearfix"></div>
+  <section id="about">
+    <div class="clearfix"></div>
+    <section class="left-col">
+      <h2>BobbieB</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptas, laborum in perferendis,
+        optio
+        molestiae provident assumenda at culpa cumque velit quaerat facere dolores, tempore necessitatibus
+        nostrum sed
+        quasi sint?</p>
+    </section>
+    <section class="sidebar">
+      <img src="{% static 'words/images/bb.png' %}" alt="">
+    </section>
+  </section>
+  <div class="clearfix"></div>
 
 
-
-    <a name="contact">
-      <section class="parallax" style="background: url('{{ parallax_img.parallax_image.url }}') fixed top">
-        <div class="parallax-inner">
-        </div>
-      </section>
-      <div class="clearfix"></div>
-      <h2>Connect</h2>
-      <section class="contact">
-        <p>bobbieb <br class="break"><a class="catalogue"
-            href="mailto:bobbiebphotography@gmail.com">bobbiebphotography@gmail.com</a>
-          <br class="break"> Guelph, Ontario
-        </p>
-      </section>
-      <section>
-        <ul class="social">
-          <li><a href="#" target="=_blank"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#" target="=_blank"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </section>
-      <div class="clearfix"></div>
-      <a name="about">
-        <div class="clearfix"></div>
-        <section class="left-col">
-          <h2>BobbieB</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptas, laborum in perferendis,
-            optio
-            molestiae provident assumenda at culpa cumque velit quaerat facere dolores, tempore necessitatibus
-            nostrum sed
-            quasi sint?</p>
-        </section>
-        <section class="sidebar">
-          <img src="{% static 'words/images/bb.png' %}" alt="">
-        </section>
-        <div class="clearfix"></div>
-
-
-        {% endblock content %}
+  {% endblock content %}
