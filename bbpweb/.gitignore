@@ -1,0 +1,11 @@
+.history
+.vscode
+db.sqlite3
+venv
+.snippits
+bbpweb/media
+.env
+*.log
+*.pot
+*.pyc
+__pycache__
