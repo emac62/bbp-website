@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, TemplateView
-from .models import MainPageImages, PhotosPageImages, Post, ParallaxImages, Project
+from .models import Post, ParallaxImages, Project
 from taggit.models import Tag
 from django.template import context
 from .forms import ContactForm, SubscribeForm
