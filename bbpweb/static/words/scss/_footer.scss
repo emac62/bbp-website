@@ -1,0 +1,36 @@
+.social {
+  list-style-type: none;
+  text-align: center;
+
+  li {
+    display: inline;
+  }
+  i {
+    font-size: 270%;
+    margin: 1% 5% 1% 4%;
+    color: $text-color;
+  }
+  i:hover {
+    color: $gray-color;
+  }
+}
+
+footer.second {
+  background-color: $light-color;
+  width: 100%;
+  padding: 0.5rem 0;
+
+  p {
+    color: $text-color;
+    text-align: center;
+    line-height: 80%;
+   
+
+  }
+  a {
+    color: black;
+  }
+  a:hover {
+    color: $gray-color;
+  }
+}

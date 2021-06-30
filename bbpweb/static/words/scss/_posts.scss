@@ -1,0 +1,77 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 2rem;
+  color: $text-color;
+
+  .sub-title {
+    font-weight: 300;
+    font-size: 180%;
+    text-align: center;
+    margin-bottom: 0;
+  
+  }
+
+ .post-content img {
+   float: right;
+   width: 40%;
+   height: auto;
+   margin-left: 1rem;
+ }
+
+ .post-content p {
+   text-align: justify;
+
+ }
+}
+
+.current-post {
+  flex: 5;
+}
+
+
+.side-bar {
+  flex: 1;
+  margin-left: 1rem;
+  background-color:#e6e6e6;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.search-container form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.search-container form input {
+  flex: 5;
+  float: left;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+.search-container form button {
+  flex: 1;
+  float: right;
+ 
+}
+
+.words-image {
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+

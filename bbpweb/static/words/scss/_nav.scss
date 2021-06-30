@@ -1,0 +1,50 @@
+nav {
+  float: left;
+
+  ul {
+    list-style: none;
+    float: left;
+    
+    li {
+      font-family: 'Work', serif;
+      font-size: 220%;
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+nav ul, nav:active ul {
+  display: none;
+  padding: 8px 0;
+  left: 45px;
+  top: 75px;
+  width: 20%;
+  z-index: 1000;
+}
+
+nav li {
+  width: 100%;
+  padding: 8px 0 10px 7px;
+  margin: 0;
+}
+
+nav:hover ul {
+  display: block;
+  position: absolute;
+}
+
+#menu-icon {
+  width: 30px;
+  height: 26px;
+  background: url('/static/words/images/nav-icon.png') center;
+  display: inline-block;
+  margin: 50px 0 0 50px;
+}

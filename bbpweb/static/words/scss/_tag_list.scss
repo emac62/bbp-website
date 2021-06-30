@@ -1,0 +1,33 @@
+.tag-list-container {
+  margin: 2rem;
+  flex: 4;
+}
+
+.posts-by-tag {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title-date {
+  flex: 3;
+  margin-left: 1rem;
+}
+
+.tagged-post {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $text-color;
+  margin: 1rem 0;
+  padding: 0.5rem;
+
+  .post-image  {
+    
+    height: auto;
+    flex: 1;
+  }
+  .post-title-date {
+    flex: 5;
+    margin-left: 1rem;
+  }
+  
+}
