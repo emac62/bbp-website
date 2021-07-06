@@ -60,39 +60,6 @@ class Project(models.Model):
         return reverse("project-detail", kwargs={"pk": self.pk})
 
 
-class MainPageImages(models.Model):
-    image = models.ImageField(
-        upload_to="images/", height_field=None, width_field=None, max_length=None
-    )
-    alt = models.CharField(max_length=50)
-
-    class Meta:
-        verbose_name = "Main Page Images"
-        verbose_name_plural = "Main Page Images"
-
-    def __str__(self):
-        return self.alt
-
-    def get_absolute_url(self):
-        return reverse("MainPageImages_detail", kwargs={"pk": self.pk})
-
-
-class PhotosPageImages(models.Model):
-    image = models.ImageField(
-        upload_to="images/", height_field=None, width_field=None, max_length=None
-    )
-    alt = models.CharField(max_length=50)
-
-    class Meta:
-        verbose_name = "Photos Page Images"
-        verbose_name_plural = "Photos Page Images"
-
-    def __str__(self):
-        return self.alt
-
-    def get_absolute_url(self):
-        return reverse("PhotosPageImages_detail", kwargs={"pk": self.pk})
-
 
 class ParallaxImages(models.Model):
     parallax_image = models.ImageField(
