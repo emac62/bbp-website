@@ -114,11 +114,17 @@ a.catalogue:hover {
 }
 
 .parallax {
-  opacity: 0.75;
+  min-height: 350px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.parallax-inner {
-  padding-top: 25%;
+@media (max-width: 568px) {
+  .parallax {
+    background-attachment: scroll;
+  }
 }
 
 .social {
