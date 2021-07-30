@@ -3,16 +3,22 @@
   align-items: center;
 }
 
+
+
 .left-col {
   width: 60%;
   float: left;
-  margin: 4% 0 4% 4%;
+  margin: 4%;
 }
 
 .sidebar {
   width: 26%;
   float: left;
   margin: 4%;
+}
+
+.sidebar img {
+  vertical-align: middle;
 }
 
 
@@ -49,10 +55,15 @@
 
 }
 
+#about {
+  display: flex;
+  flex-direction: row;
+}
+
 
 .contact p {
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
 
 .contact a {
@@ -67,7 +78,7 @@ a.catalogue:hover {
 
 .clearfix {
   clear: both;
-  height: 3%;
+  height: 1.5%;
 }
 
 

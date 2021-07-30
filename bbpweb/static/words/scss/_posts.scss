@@ -31,6 +31,11 @@ body, html {
  }
 }
 
+.post-content p::first-letter {
+  font-family: 'Tangerine-Bold';
+  font: bold italic 3em / .5 'Tangerine-Bold';
+}
+
 .current-post {
   flex: 5;
 }
