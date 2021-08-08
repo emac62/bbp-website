@@ -56,8 +56,18 @@
 }
 
 #about {
-  display: flex;
-  flex-direction: row;
+  .post-content img {
+    float: left;
+    width: 25%;
+    height: auto;
+    margin-right: 1rem;
+  }
+  .post-content p::first-letter {
+    font-family: 'Work Sans', serif;
+    font-weight: 300;
+    font-size: 140%;
+    font-style: normal;
+  }
 }
 
 
