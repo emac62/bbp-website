@@ -79,4 +79,8 @@ body, html {
 }
 
 
-
+@media(max-width: 768px) {
+  .posts-container {
+    flex-direction: column;
+  }
+}

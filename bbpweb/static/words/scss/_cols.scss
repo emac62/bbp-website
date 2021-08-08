@@ -56,8 +56,15 @@
 }
 
 #about {
-  display: flex;
-  flex-direction: row;
+  .post-content img {
+    float: left;
+    width: 25%;
+    height: auto;
+    margin-right: 1rem;
+  }
+  .post-content p::first-letter {
+    all: revert;
+  }
 }
 
 

@@ -63,7 +63,8 @@ class PhotosView(ListView):
     def get_context_data(self, **kwargs):
         context = super(PhotosView, self).get_context_data(**kwargs)
         context["parallax_img"] = ParallaxImages.objects.last()
-        context["form"] = ContactForm()
+        context["cform"] = ContactForm()
+        context["sform"] = SubscribeForm()
         return context
 
 

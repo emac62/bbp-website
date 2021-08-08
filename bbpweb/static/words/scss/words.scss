@@ -117,3 +117,9 @@ a:hover{
 a:visited {
   color: $text-color;
 }
+
+@media(max-width:568px){
+  .posts-intro {
+    flex-direction: column;
+  }
+}

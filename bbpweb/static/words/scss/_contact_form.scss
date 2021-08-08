@@ -79,3 +79,29 @@ button:hover{
     color: $greeny-accent;
   }
 }
+
+
+@media(max-width: 425px) {
+  .form {
+    width: 95%;
+
+    h2 {
+      font-size: 200%;
+    }
+
+    input {
+      width: 60%;
+    }
+
+    .contact p:before {
+      font-size: medium;
+    }
+  }
+
+}
+
+@media(max-width: 768px) {
+  .form h2 {
+    font-size: 200%;
+  }
+}
