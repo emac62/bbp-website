@@ -106,10 +106,7 @@ nav:hover ul {
 }
 
 #about .post-content p::first-letter {
-  font-family: 'Work Sans', serif;
-  font-weight: 300;
-  font-size: 140%;
-  font-style: normal;
+  all: revert;
 }
 
 .contact p {

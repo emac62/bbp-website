@@ -75,7 +75,7 @@
 
 <div class="subcribe">
   <form class="form" action="{% url 'subscribe' %}" method='Post'>{% csrf_token %}
-    <h2>Subscribe to get an email for the next post.</h2>
+    <h2>Subscribe to get an email for updated posts.</h2>
     {{form.as_p}}
     <button type="submit">Submit</button>
 

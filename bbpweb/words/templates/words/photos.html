@@ -65,4 +65,13 @@
   </div>
 </div>
 
+<div class="subcribe">
+  <form class="form" action="{% url 'subscribe' %}" method='Post'>{% csrf_token %}
+    <h2>Subscribe to get an email for updated projects.</h2>
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+
+  </form>
+</div>
+
 {% endblock content %}
